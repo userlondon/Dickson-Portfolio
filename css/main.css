@@ -133,6 +133,27 @@ body {
   font-family: inherit;
 }
 
+.page {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lazy-load {
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.load {
+  opacity: 1;
+  transform: translateX(0);
+  /* padding-right: 1.8rem; */
+}
+
 .active {
   color: var(--text-white-color);
   background-color: var(--animation-1-color);

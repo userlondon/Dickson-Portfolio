@@ -117,3 +117,43 @@ imgLoad.forEach(img => {
     img.classList.add('loaded');
   });
 });
+
+// //////////////////////////////////////////////////////////////////////
+// SCROLLING TRIGGER
+const pages = document.querySelectorAll('.page');
+
+const newObs = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  }
+);
+
+pages.forEach(page => {
+  newObs.observe(page);
+});
+
+const loads = document.querySelectorAll('.lazy-load');
+
+const nEwobs = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('load');
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  }
+);
+
+loads.forEach(load => {
+  nEwobs.observe(load);
+});
